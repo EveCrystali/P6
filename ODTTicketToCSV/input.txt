@@ -1,0 +1,387 @@
+Ticket 1
+
+Produit : Maître des Investissements
+Version :  2.1
+Système d’exploitation : Windows
+Date de création : 5 janvier 2023
+Date de résolution : 20 janvier 2023
+Statut (résolu/en cours) : Résolu
+
+Problème : Les utilisateurs rencontrent des plantages fréquents de l'application lorsqu'ils tentent de synchroniser leurs portefeuilles avec les serveurs de l'entreprise. L'application se ferme de manière inattendue après avoir cliqué sur le bouton de synchronisation.
+
+Résolution : Les logs ont montré une incompatibilité avec une bibliothèque spécifique utilisée pour la communication réseau. La bibliothèque a été mise à jour et les utilisateurs ont été invités à télécharger la dernière version de l'application. Des tests supplémentaires ont été effectués pour garantir la stabilité de la nouvelle version.
+
+Ticket 2
+
+Produit : Planificateur d’Entraînement
+Version :  1.0 
+Système d’exploitation : Android
+Date de création : 10 Février 2023
+Date de résolution : 
+Statut (résolu/en cours) : En cours
+
+Problème : Les utilisateurs signalent que les notifications d'entraînement ne se déclenchent pas à l'heure prévue. Certaines notifications sont retardées de plusieurs heures, tandis que d'autres ne se déclenchent pas du tout.
+
+Résolution : En cours d'investigation. Une analyse préliminaire suggère que le problème pourrait être lié à la gestion des permissions de l'application sous Android 12. Une mise à jour est en cours de développement pour résoudre ce problème. En attendant, les utilisateurs ont été conseillés de vérifier et d'ajuster les paramètres de notification et de permissions.
+
+Ticket 3
+
+Produit : Planification d’Anxiété Sociale
+Version :  1.1
+Système d’exploitation : MacOS
+Date de création : 15 mars 2023
+Date de résolution : 5 avril 2023
+Statut (résolu/en cours) : Résolu
+
+Problème : L'application se bloque lors de la génération de rapports de progrès hebdomadaires. Les utilisateurs voient un message d'erreur indiquant "Erreur inattendue" après avoir cliqué sur le bouton "Générer le rapport".
+
+Résolution : Le problème a été causé par une gestion incorrecte des dates dans le code de génération de rapports. Une mise à jour a été déployée pour corriger la gestion des dates et améliorer la robustesse du processus de génération de rapports. Les utilisateurs ont été informés de la mise à jour et invités à réessayer de générer leurs rapports.
+
+
+Ticket 4
+
+Produit : Trader en Herbe
+Version : 1.0
+Système d’exploitation : Linux
+Date de création : 22 janvier 2023
+Date de résolution : 15 février 2023
+Statut (résolu/en cours) : Résolu
+Problème : Des utilisateurs signalent que l'application ne démarre pas après l'installation. Lorsque l'utilisateur essaie de lancer l'application, une fenêtre vide apparaît et se ferme immédiatement.
+
+Résolution : Le problème a été identifié comme étant un conflit avec une version spécifique de Linux. Une mise à jour de l'application a été déployée pour corriger ce problème de compatibilité.
+
+Ticket 5
+
+Produit : Trader en Herbe
+Version : 1.1
+Système d’exploitation : Windows
+Date de création : 3 mars 2023
+Date de résolution : 
+Statut (résolu/en cours) : En cours
+
+Problème : Les utilisateurs rencontrent des erreurs lors de l'importation de leurs données de portefeuille. L'application affiche un message d'erreur "Importation échouée" sans fournir de détails supplémentaires.
+
+Résolution : En cours d'investigation. Une analyse préliminaire suggère que le problème pourrait être lié à des formats de fichier non pris en charge. Une mise à jour de l'application est en cours de développement pour améliorer la gestion des erreurs et la compatibilité des formats de fichier.
+
+
+
+Ticket 6
+
+Produit : Trader en Herbe
+Version : 1.1
+Système d’exploitation : MacOS
+Date de création : 22 janvier 2023
+Date de résolution : 15 février 2023
+Statut (résolu/en cours) : Résolu
+
+Problème : Les utilisateurs signalent que l'application ne démarre pas après l'installation. Lorsque l'utilisateur essaie de lancer l'application, une fenêtre vide apparaît et se ferme immédiatement.
+
+Résolution : Le problème a été identifié comme étant un conflit avec une version spécifique de macOS. Une mise à jour de l'application a été déployée pour corriger ce problème de compatibilité, et les utilisateurs ont été informés de la nécessité de mettre à jour leur application.
+
+
+
+Ticket 7
+
+Produit : Trader en Herbe
+Version : 1.2
+Système d’exploitation : Linux
+Date de création : 10 avril 2023
+Date de résolution : 25 avril 2023
+Statut (résolu/en cours) : Résolu
+Problème : L'application affiche des graphiques incorrects pour les tendances de marché. Les utilisateurs remarquent que les graphiques ne se mettent pas à jour en temps réel et montrent des données obsolètes.
+
+Résolution : Le problème a été identifié comme étant une erreur dans le code de mise à jour des graphiques. Une mise à jour a été déployée pour corriger ce problème et les utilisateurs ont été informés de la mise à jour. Les graphiques se mettent désormais à jour en temps réel comme prévu.
+
+
+Ticket 8
+
+Produit : Trader en Herbe
+Version : 1.3
+Système d’exploitation : Android
+Date de création : 18 mai 2023
+Date de résolution : 
+Statut (résolu/en cours) : En cours
+
+Problème : L'application consomme une quantité excessive de batterie. Les utilisateurs signalent que leur batterie se vide rapidement lorsqu'ils utilisent l'application, même pendant de courtes périodes.
+
+Résolution : En cours d'investigation. Les développeurs sont en train de profiler l'application pour identifier les fuites de mémoire ou les processus gourmands en ressources. Une mise à jour est prévue pour optimiser la consommation d'énergie de l'application.
+
+
+Ticket 9
+
+Produit : Maître des Investissements
+Version : 1.0
+Système d’exploitation : MacOS
+Date de création : 12 janvier 2023
+Date de résolution : 28 janvier 2023
+Statut (résolu/en cours) : Résolu
+
+Problème : Les utilisateurs signalent que l'application plante lorsqu'ils essaient d'ajouter une nouvelle transaction à leur portefeuille. L'application se ferme de manière inattendue après avoir cliqué sur le bouton "Ajouter".
+
+Résolution : Le problème a été identifié comme étant une erreur dans la gestion de la mémoire lors de l'ajout de nouvelles transactions. Une mise à jour a été déployée pour corriger cette gestion de mémoire et stabiliser l'application. 
+
+Ticket 10
+Produit : Maître des Investissements
+Version : 2.1
+Système d’exploitation : Windows
+Date de création : 1 février 2023
+Date de résolution : 15 février 2023
+Statut (résolu/en cours) : Résolu
+
+Problème : Les utilisateurs rencontrent des problèmes de lenteur lors de la génération de rapports financiers mensuels. L'application prend plusieurs minutes pour générer un rapport, ce qui ralentit considérablement le flux de travail.
+
+Résolution  : Après investigation, il s'est avéré que le code responsable de la génération des rapports n'était pas optimisé et effectuait des requêtes redondantes à la base de données. Les développeurs ont remanié l'algorithme pour réduire le nombre de requêtes, mise en cache des données fréquemment utilisées et parallélisation de certains calculs. Dans la nouvelle version, les temps de génération des rapports ont été considérablement réduits, passant de plusieurs minutes à quelques secondes seulement. Des tests de charge ont confirmé les gains de performances. 
+
+Ticket 10
+
+Produit : Maître des Investissements
+Version : 2.1
+Système d’exploitation : Android
+Date de création : 1 février 2023
+Date de résolution : 15 février 2023
+Statut (résolu/en cours) : Résolu
+
+Problème : Plusieurs utilisateurs ont signalé un bogue où le graphique des performances du portefeuille n'affichait pas les bonnes données pour la période sélectionnée.
+
+Résolution  : Un correctif a été déployé dans la nouvelle version pour corriger le calcul de la plage de dates dans le graphique des performances.
+
+Ticket 11
+
+Produit : Maître des Investissements
+Version : 1.0
+Système d’exploitation : iOS
+Date de création : 1 février 2023
+Date de résolution : 
+Statut (résolu/en cours) : En cours
+
+Problème : Sur les appareils iOS les plus récents, l'application plante lors du démarrage avec une erreur de violation d'accès.
+
+Résolution  : 
+
+Ticket 12
+Produit : Maître des Investissements
+Version : 2.1
+Système d’exploitation : iOS
+Date de création : 1 février 2023
+Date de résolution : 15 février 2023
+Statut (résolu/en cours) : Résolu
+
+Problème : Sur certains modèles d'iPhone et d'iPad, les titres des graphiques financiers dans l'application ne s'affichent pas correctement. Le titre se trouve soit tronqué, soit chevauche d'autres éléments de l'interface utilisateur. Ce problème semble lié aux différentes tailles et résolutions d'écran des appareils iOS.
+
+Résolution  : Après avoir examiné le code d'affichage des graphiques, les développeurs ont apporté des modifications pour s'assurer que les dispositions s'adaptent dynamiquement aux différentes tailles d'écran. La version 2.1.2 corrige ce bogue et les titres des graphiques s'affichent désormais correctement sur tous les modèles iOS pris en charge, quelle que soit leur résolution. Des tests approfondis sur différents appareils ont validé la correction.
+
+Ticket 13
+
+Produit : Planificateur d’Entraînement
+Version : 1.1
+Système d’exploitation : Windows
+Date de création : 15 janvier 2023
+Date de résolution : 30 janvier 2023
+Statut (résolu/en cours) : Résolu
+
+Problème : Les utilisateurs signalent que l'application se fige lorsqu'ils tentent de créer un plan d'entraînement personnalisé. L'application ne répond plus et doit être redémarrée.
+
+Résolution : Le problème a été identifié comme étant une fuite de mémoire dans le module de gestion des sessions d'entraînement. Une mise à jour a été déployée pour corriger cette fuite de mémoire et stabiliser l'application lors de la création de plans d'entraînement personnalisés.
+
+Ticket 14
+
+Produit : Planificateur d’Entraînement
+Version : 1.1
+Système d’exploitation : MacOS
+Date de création : 20 février 2023
+Date de résolution : 5 mars 2023 
+Statut (résolu/en cours) : Résolu
+
+Problème : Les utilisateurs rencontrent des erreurs lors de la synchronisation de leurs données avec l'application Apple Health. Les données d'entraînement ne sont pas correctement transférées, ce qui entraîne des incohérences dans les rapports de santé.
+
+Résolution : Le problème a été identifié comme étant un bug dans le module de synchronisation avec Apple Health. Une mise à jour a été déployée pour corriger ce bug et garantir une synchronisation correcte des données. 
+
+
+Ticket 15
+
+Produit : Planificateur d’Entraînement
+Version : 1.1
+Système d’exploitation : Android
+Date de création : 20 février 2023
+Date de résolution : 
+Statut (résolu/en cours) : En cours
+
+Problème : Les utilisateurs signalent que les rappels d'entraînement ne se déclenchent pas à l'heure prévue. Certaines notifications sont retardées de plusieurs heures, tandis que d'autres ne se déclenchent pas du tout.
+
+Résolution : 
+
+Ticket 16
+
+Produit : Planificateur d’Entraînement
+Version : 1.1
+Système d’exploitation : iOS
+Date de création : 5 Avril 2023
+Date de résolution : 20 avril 2023
+Statut (résolu/en cours) : Résolu
+
+Problème : L'application affiche des valeurs incorrectes pour les calories brûlées pendant les séances d'entraînement. Les utilisateurs remarquent que les calories affichées sont beaucoup plus élevées que celles mesurées par d'autres applications de fitness.
+
+Résolution : Le problème a été identifié comme étant une erreur dans l'algorithme de calcul des calories. Une mise à jour a été déployée pour corriger cet algorithme et garantir des valeurs précises pour les calories brûlées. Les utilisateurs ont été informés de la mise à jour et invités à vérifier les nouvelles valeurs.
+
+Ticket 17
+
+Produit : Planificateur d’Entraînement
+Version : 1.0
+Système d’exploitation : Linux
+Date de création : 20 mai 2023 
+Date de résolution : 5 juin 2023
+Statut (résolu/en cours) : Résolu
+
+Problème : Les utilisateurs rencontrent des difficultés avec la mise en page des plans d'entraînement exportés en format PDF. Les éléments du plan d'entraînement se chevauchent et le PDF généré ne correspond pas à la mise en page de l'application, rendant le document illisible.
+
+Résolution : Le problème a été identifié comme étant une erreur dans le code de génération de PDF qui ne respectait pas les styles et formats de mise en page définis dans l'application. Une mise à jour a été déployée pour corriger le code de génération de PDF, assurant que les éléments sont correctement alignés et que la mise en page du PDF correspond à celle de l'application.
+
+Ticket 18
+
+Produit : Planificateur d'Anxiété Sociale
+Version : 1.0
+Système d’exploitation : Android
+Date de création : 1 février 2023
+Date de résolution : 15 février 2023 
+Statut (résolu/en cours) : Résolu
+
+Problème : Les utilisateurs signalent que l'application plante lorsqu'ils essaient d'ajouter un nouvel événement social à leur calendrier. L'application se ferme de manière inattendue après avoir cliqué sur "Ajouter".
+
+Résolution : Le problème a été identifié comme étant une incompatibilité avec une mise à jour récente d'Android. Une mise à jour de l'application a été déployée pour corriger cette incompatibilité, et les utilisateurs ont été informés de la mise à jour et invités à mettre à jour leur application.
+
+Ticket 19
+Produit : Planificateur d'Anxiété Sociale
+Version : 1.0
+Système d’exploitation : iOS
+Date de création : 20 mars 2023
+Date de résolution : 5 avril 2023
+Statut (résolu/en cours) : Résolu
+
+Problème : Les notifications pour les rappels d'événements ne se déclenchent pas à l'heure prévue. Les utilisateurs ne reçoivent pas les rappels à temps, ce qui entraîne des problèmes de gestion de l'anxiété.
+
+Résolution : Le problème a été identifié comme étant une mauvaise configuration des notifications dans l'application. Une mise à jour a été déployée pour corriger les paramètres de notification et garantir que les rappels se déclenchent à l'heure prévue. Les utilisateurs ont été informés de la mise à jour et invités à vérifier les nouvelles notifications.
+
+Ticket 20
+
+Produit : Planificateur d'Anxiété Sociale
+Version : 1.1
+Système d’exploitation : Windows
+Date de création : 5 avril 2023
+Date de résolution : 
+Statut (résolu/en cours) : En cours
+
+
+Problème : L'application se bloque lorsqu'on tente d'accéder à l'historique des sessions de thérapie. Les utilisateurs signalent que l'application ne répond plus et doit être redémarrée.
+
+Résolution : 
+
+
+Ticket 21
+
+Produit : Planificateur d'Anxiété Sociale
+Version : 1.1
+Système d’exploitation : MacOS
+Date de création : 15 mai 2023
+Date de résolution : 30 mai 2023
+Statut (résolu/en cours) : Résolu
+
+
+Problème : Les utilisateurs signalent que l'application ne se connecte pas correctement aux services de synchronisation cloud. Les données ne sont pas mises à jour entre les différents appareils, ce qui entraîne des incohérences dans les journaux et les événements.
+
+Résolution : Le problème a été identifié comme étant une mauvaise gestion des tokens d'authentification pour les services de cloud. Une mise à jour a été déployée pour corriger cette gestion des tokens et assurer une synchronisation correcte des données entre les appareils. Les utilisateurs ont été informés de la mise à jour et invités à reconnecter leurs comptes pour rétablir la synchronisation.
+
+Ticket 22
+
+Produit : Planificateur d'Anxiété Sociale
+Version : 1.0
+Système d’exploitation : Windows
+Date de création : 10 juin 2023
+Date de résolution : 
+Statut (résolu/en cours) : En cours
+
+
+Problème : Les utilisateurs rencontrent des difficultés avec les graphiques de suivi de l'humeur qui ne s'affichent pas correctement. Les graphiques sont incomplets ou ne montrent pas les données sur une période donnée.
+
+Résolution : 
+
+
+Ticket 23
+
+Produit : Trader en Herbe
+Version : 1.2
+Système d’exploitation : Windows Mobile
+Date de création : 15 août 2023
+Date de résolution : 1 septembre 2023
+Statut (résolu/en cours) : Résolu
+
+
+Problème : Les utilisateurs signalent que l'application se déconnecte fréquemment du serveur, ce qui entraîne des interruptions lors de l'exécution des transactions. Cela perturbe l'expérience utilisateur, en particulier lors des périodes de haute volatilité du marché.
+
+Résolution : Le problème a été identifié comme étant une mauvaise gestion des connexions réseau sur Windows Mobile. Une mise à jour a été déployée pour améliorer la stabilité des connexions et réduire les interruptions. Les utilisateurs ont été informés de la mise à jour et invités à vérifier leurs connexions.
+
+Ticket 24
+
+Produit : Trader en Herbe
+Version : 1.2
+Système d’exploitation : Linux
+Date de création : 25 septembre 2023
+Date de résolution : 
+Statut (résolu/en cours) : En cours
+
+
+Problème : L'application affiche des données pour certains marché incorrectes après une actualisation manuelle. Les utilisateurs signalent des écarts importants entre les valeurs affichées et les valeurs réelles du marché. 
+
+Résolution : 
+
+
+Ticket 24
+
+Produit : Trader en Herbe
+Version : 1.3
+Système d’exploitation : MacOS
+Date de création : 5 octobre 2023
+Date de résolution : 20 octobre 2023
+Statut (résolu/en cours) : Résolu
+
+
+Problème : Les utilisateurs signalent des problèmes de performances lorsque l'application est utilisée sur des appareils Mac plus anciens. L'application est lente et parfois non réactive, ce qui rend difficile l'exécution des transactions en temps opportun.
+
+Résolution : Le problème a été identifié comme étant une gestion inefficace des ressources système sur les appareils plus anciens. Une mise à jour a été déployée pour optimiser l'utilisation des ressources et améliorer les performances sur les appareils Mac plus anciens. Les utilisateurs ont été informés de la mise à jour et invités à vérifier les améliorations.
+
+Ticket 25
+
+Produit : Planificateur d’Anxiété Sociale 
+Version : 1.1
+Système d’exploitation : Windows
+Date de création : 10 novembre 2023
+Date de résolution : 25 novembre 2023
+Statut (résolu/en cours) : Résolu
+
+
+Problème : Les utilisateurs signalent que l'application ne sauvegarde pas correctement les entrées du journal de bord. Après avoir ajouté des entrées et fermé l'application, ils constatent que la dernière entrée a disparu lorsqu'ils rouvrent l'application.
+
+Résolution : Le problème a été identifié comme étant un bug dans le module de sauvegarde automatique. Une mise à jour a été déployée pour corriger ce bug et garantir que les entrées du journal de bord sont correctement sauvegardées. Les utilisateurs ont été informés de la mise à jour et invités à vérifier la persistance de leurs nouvelles entrées.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
