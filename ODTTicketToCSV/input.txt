@@ -26,7 +26,7 @@ Résolution : En cours d'investigation. Une analyse préliminaire suggère que l
 
 Ticket 3
 
-Produit : Planification d’Anxiété Sociale
+Produit : Planificateur d’Anxiété Sociale
 Version :  1.1
 Système d’exploitation : MacOS
 Date de création : 15 mars 2023

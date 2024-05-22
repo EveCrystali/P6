@@ -26,7 +26,6 @@ namespace TicketToCSV
                 string fileContent = File.ReadAllText(inputFilePath);
                 List<Ticket> tickets = ReadTicketsFromContent(fileContent);
                 WriteTicketsToCsv(tickets, outputFilePath);
-
                 Console.WriteLine("Les tickets ont été convertis et enregistrés dans le fichier CSV.");
             }
             catch (Exception ex)
@@ -40,8 +39,15 @@ namespace TicketToCSV
             List<Ticket> tickets = new List<Ticket>();
             string[] lines = content.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
             Ticket currentTicket = null;
+            List<string> cleanedLines = new List<string>();
 
-            foreach (string line in lines)
+            foreach (var line in lines)
+            {
+                string cleanedLine = PreprocessCsvLine(line);
+                cleanedLines.Add(cleanedLine);
+            }
+
+            foreach (string line in cleanedLines)
             {
                 if (Regex.IsMatch(line, @"^Produit :"))
                 {
@@ -58,7 +64,7 @@ namespace TicketToCSV
                     string version = line.Substring("Version :".Length).Trim();
                     currentTicket.Version = string.IsNullOrWhiteSpace(version) ? null : version;
                 }
-                else if (Regex.IsMatch(line, @"^Système d’exploitation :"))
+                else if (Regex.IsMatch(line, @"^Système d'exploitation :"))
                 {
                     string systemeExploitation = line.Substring("Système d’exploitation :".Length).Trim();
                     currentTicket.SystemeExploitation = string.IsNullOrWhiteSpace(systemeExploitation) ? null : systemeExploitation;
@@ -88,8 +94,6 @@ namespace TicketToCSV
                     string resolution = line.Substring("Résolution :".Length).Trim();
                     currentTicket.Resolution = string.IsNullOrWhiteSpace(resolution) ? null : resolution;
                 }
-
-
             }
 
             if (currentTicket != null)
@@ -113,6 +117,18 @@ namespace TicketToCSV
             }
         }
 
+        static string PreprocessCsvLine(string line)
+        {
+            line = line.Replace("\"", "\"\"");
+            line = line.Replace("\n", " ").Replace("\r", " ");
+            line = line.Replace("’", "'");  
+            line = line.Replace("‘", "'");  
+            line = line.Replace("`", "'");  
+            line = line.Replace("\u00A0", " ");
+            line = Regex.Replace(line, @"\s+", " ").Trim();
+            return line;
+        }
+
         static DateTime ParseDate(string date)
         {
             Dictionary<string, string> month = new Dictionary<string, string>
@@ -133,7 +149,7 @@ namespace TicketToCSV
 
             string pattern = @"^(?<day>\d{1,2})\s+(?<month>\D+)\s+(?<year>\d{4})$";
             Regex regex = new Regex(pattern, RegexOptions.IgnoreCase);
-            
+
             Match match = regex.Match(date);
             if (match.Success)
             {
@@ -154,12 +170,12 @@ namespace TicketToCSV
                     Console.WriteLine("Mois non valide." + monthName);
                     return DateTime.Parse("0000-00-00");
                 }
-                
+
             }
             else
             {
                 Console.WriteLine("Format de date non valide.");
-                return DateTime.Parse("0000-00-00");  
+                return DateTime.Parse("0000-00-00");
             }
 
         }

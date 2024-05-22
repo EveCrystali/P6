@@ -1,6 +1,6 @@
 -- Créer une table temporaire pour importer le CSV
-DROP TABLE #TempTickets;
-CREATE TABLE #TempTickets (
+-- DROP TABLE #TempTickets;
+CREATE TABLE TempTickets (
     Produit NVARCHAR(50),
     Version NVARCHAR(50),
     SystemeExploitation NVARCHAR(50),
@@ -12,7 +12,7 @@ CREATE TABLE #TempTickets (
 );
 
 -- Utiliser BULK INSERT pour charger les données du CSV dans la table temporaire
-BULK INSERT #TempTickets
+BULK INSERT TempTickets
 FROM 'J:\Open Classrooms\P6\ODTTicketToCSV\output.csv'
 WITH (
     FIELDTERMINATOR = ',',
