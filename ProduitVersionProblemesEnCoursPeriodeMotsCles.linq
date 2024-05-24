@@ -72,7 +72,6 @@ void Main()
         resultatsListe = resultatsListe.Where(t => motsCles.Any(k => t.Probleme.Contains(k))).ToList();
     }
 
-    
 	var resultatsFinaux = from r in resultats
 					join p in Produits on r.Produit_id equals p.Id
                     join v in Versions on r.Version_id equals v.Id

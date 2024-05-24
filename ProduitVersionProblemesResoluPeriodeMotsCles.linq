@@ -25,7 +25,7 @@ void Main()
 
     int? productId = null;
     int? versionId = null;
-    int? statutId = GetStatusId("En cours");
+    int? statutId = GetStatusId("Résolu");
     var motsCles = motsClesStr.Split(',').Select(k => k.Trim()).ToList();
 
     if (!string.IsNullOrWhiteSpace(produitNom))
