@@ -72,13 +72,29 @@ void Main()
         resultatsListe = resultatsListe.Where(t => motsCles.Any(k => t.Probleme.Contains(k))).ToList();
     }
 
-    if (!resultatsListe.Any())
+    var resultatsFinaux = from r in resultats
+					join p in Produits on r.Produit_id equals p.Id
+                    join v in Versions on r.Version_id equals v.Id
+					join o in Systeme_exploitations on r.Version_id equals o.Id
+                    join s in Statuts on r.Statut_id equals s.Id
+					select new { 
+									r.Id, 
+									r.Date_de_creation, 
+									Produit = p.Nom, 
+									Version = v.Nom, 
+									Systeme_exploitation = o.Nom, 
+									Statut = s.Nom, 
+									Probleme = r.Probleme, 
+									r.Date_de_resolution, 
+									r.Resolution};
+									
+	if (!resultatsListe.Any())
     {
         Console.WriteLine("Aucun résultat trouvé.");
     }
     else
     {
-        resultatsListe.Dump();
+        resultatsFinaux.Dump();
     }
 }
 
