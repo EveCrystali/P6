@@ -14,7 +14,7 @@ Résolution : Les logs ont montré une incompatibilité avec une bibliothèque s
 Ticket 2
 
 Produit : Planificateur d’Entraînement
-Version :  1.0 
+Version :  1.1 
 Système d’exploitation : Android
 Date de création : 10 Février 2023
 Date de résolution : 
@@ -174,7 +174,7 @@ Ticket 13
 
 Produit : Planificateur d’Entraînement
 Version : 1.1
-Système d’exploitation : Windows
+Système d’exploitation : Windows Mobile
 Date de création : 15 janvier 2023
 Date de résolution : 30 janvier 2023
 Statut (résolu/en cours) : Résolu
@@ -200,7 +200,7 @@ Résolution : Le problème a été identifié comme étant un bug dans le module
 Ticket 15
 
 Produit : Planificateur d’Entraînement
-Version : 1.1
+Version : 2.0
 Système d’exploitation : Android
 Date de création : 20 février 2023
 Date de résolution : 
