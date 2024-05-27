@@ -160,7 +160,7 @@ Résolution  :
 
 Ticket 12
 Produit : Maître des Investissements
-Version : 2.1
+Version : 2.0
 Système d’exploitation : iOS
 Date de création : 1 février 2023
 Date de résolution : 15 février 2023

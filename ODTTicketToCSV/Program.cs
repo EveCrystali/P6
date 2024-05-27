@@ -108,11 +108,11 @@ namespace TicketToCSV
         {
             using (StreamWriter writer = new StreamWriter(filePath))
             {
-                writer.WriteLine("Produit,Version,SystemeExploitation,DateCreation,DateResolution,Statut,Probleme,Resolution");
+                writer.WriteLine("Produit;Version;SystemeExploitation;DateCreation;DateResolution;Statut;Probleme;Resolution");
 
                 foreach (Ticket ticket in tickets)
                 {
-                    writer.WriteLine($"{ticket.Produit},{ticket.Version},{ticket.SystemeExploitation},{ticket.DateCreation},{ticket.DateResolution},{ticket.Statut},\"{ticket.Probleme}\",\"{ticket.Resolution}\"");
+                    writer.WriteLine($"{ticket.Produit};{ticket.Version};{ticket.SystemeExploitation};{ticket.DateCreation};{ticket.DateResolution};{ticket.Statut};\"{ticket.Probleme}\";\"{ticket.Resolution}\"");
                 }
             }
         }

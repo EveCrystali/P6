@@ -15,7 +15,7 @@ CREATE TABLE TempTickets (
 BULK INSERT TempTickets
 FROM 'J:\Open Classrooms\P6\ODTTicketToCSV\output.csv'
 WITH (
-    FIELDTERMINATOR = ',',
+    FIELDTERMINATOR = ';',
     ROWTERMINATOR = '\n',
     FIRSTROW = 2,
     CODEPAGE = '65001', -- UTF-8
