@@ -20,13 +20,13 @@ void Main()
     string periodeFinStr = Util.ReadLine("Entrez la date de fin de période (format : jj/MM/aaaa, optionnel : laissez vide pour ignorer ce filtre) :");
     string motsClesStr = Util.ReadLine("Entrez les mots-clés séparés par des virgules :");
 
-    DateTime periodeDebut;
-    DateTime periodeFin;
-
+    DateTime? periodeDebut = null;
+    DateTime? periodeFin = null;
     int? productId = null;
     int? versionId = null;
+	var motsCles = !string.IsNullOrWhiteSpace(motsClesStr) ? motsClesStr.Split(',').Select(k => k.Trim()).ToList() : new List<string>();
     int? statutId = GetStatusId("Résolu");
-    var motsCles = motsClesStr.Split(',').Select(k => k.Trim()).ToList();
+
 
     if (!string.IsNullOrWhiteSpace(produitNom))
     {
@@ -39,8 +39,8 @@ void Main()
         Console.WriteLine("VersionNom: " + versionNom + ", VersionId: " + versionId);
     }
 
-    bool periodeDebutValide = DateTime.TryParse(periodeDebutStr, out periodeDebut);
-    bool periodeFinValide = DateTime.TryParse(periodeFinStr, out periodeFin);
+    periodeDebut = TryParseDate(periodeDebutStr);
+    periodeFin = TryParseDate(periodeFinStr);
 
     var resultats = from t in Tickets
                     where t.Statut_id == statutId.Value
@@ -54,17 +54,17 @@ void Main()
     {
         resultats = resultats.Where(t => t.Version_id == versionId.Value);
     }
-    if (periodeDebutValide && periodeFinValide)
+    if (periodeDebut.HasValue && periodeFin.HasValue)
     {
-        resultats = resultats.Where(t => t.Date_de_creation >= periodeDebut && t.Date_de_creation <= periodeFin);
+        resultats = resultats.Where(t => t.Date_de_resolution >= periodeDebut && t.Date_de_creation <= periodeFin);
     }
-    else if (periodeDebutValide)
+    else if (periodeDebut.HasValue)
     {
-        resultats = resultats.Where(t => t.Date_de_creation >= periodeDebut);
+        resultats = resultats.Where(t => t.Date_de_resolution >= periodeDebut);
     }
-    else if (periodeFinValide)
+    else if (periodeFin.HasValue)
     {
-        resultats = resultats.Where(t => t.Date_de_creation <= periodeFin);
+        resultats = resultats.Where(t => t.Date_de_resolution <= periodeFin);
     }
 
     var resultatsListe = resultats.ToList();
@@ -127,4 +127,13 @@ int? GetVersionId(string versionNom)
                     where v.Nom == versionNom
                     select v.Id).FirstOrDefault();
     return resultat;
+}
+
+DateTime? TryParseDate(string dateStr)
+{
+    if (DateTime.TryParse(dateStr, out var date))
+    {
+        return date;
+    }
+    return null;
 }
