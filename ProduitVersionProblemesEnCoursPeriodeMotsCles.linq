@@ -40,7 +40,7 @@ void Main()
     periodeDebut = TryParseDate(periodeDebutStr);
     periodeFin = TryParseDate(periodeFinStr);
 
-	var debugInfo = $"Les résultats pour la recherche de {(productId.HasValue ? $"produit: {produitNom}" : "tous les produits")}, " +
+	var debugInfo = $"Les résultats pour la recherche de tickets \"En cours\" de {(productId.HasValue ? $"produit: {produitNom}" : "tous les produits")}, " +
                     $"{(versionId.HasValue ? $"version: {versionNom}" : "toutes les versions")}, " +
                     $"{(periodeDebut.HasValue ? $"de la date de début: {periodeDebut.Value.ToString("dd/MM/yyyy")}" : "sans date de début")}, " +
                     $"{(periodeFin.HasValue ? $"à la date de fin: {periodeFin.Value.ToString("dd/MM/yyyy")}" : "sans date de fin")}, " +
