@@ -28,17 +28,38 @@ void Main()
 
     if (!string.IsNullOrWhiteSpace(produitNom))
     {
-	        productId = GetProductId(produitNom);
-	        Console.WriteLine("ProduitNom: " + produitNom + ", ProductId: " + productId);
+	    productId = GetProductId(produitNom);
+	    Console.WriteLine("ProduitNom: " + produitNom + ", ProductId: " + productId);
 	    
 	    if (!string.IsNullOrWhiteSpace(versionNom))
 	    {
 	        versionId = GetVersionId(versionNom);
 	        Console.WriteLine("VersionNom: " + versionNom + ", VersionId: " + versionId);
 	    }
+		else
+		{
+			Console.WriteLine("Pas de version spécifiée");
+		}
 
 	    periodeDebut = TryParseDate(periodeDebutStr);
         periodeFin = TryParseDate(periodeFinStr);
+		
+	    if (periodeDebut.HasValue)
+	    {
+	        Console.WriteLine("Période début: " + periodeDebut.Value.ToString("dd/MM/yyyy"));
+	    }
+		else
+		{
+			Console.WriteLine("Pas de période de début spécifiée");
+		}
+	    if (periodeFin.HasValue)
+	    {
+	        Console.WriteLine("Période fin: " + periodeFin.Value.ToString("dd/MM/yyyy"));
+	    }
+		else
+		{
+			Console.WriteLine("Pas de période de fin spécifiée");
+		}
 
 	    var resultats = from t in Tickets
 	                    select t;
@@ -68,8 +89,14 @@ void Main()
 
 	    if (motsCles.Any())
 	    {
+			Console.WriteLine("Mots-clés: " + string.Join(", ", motsCles));
 	        resultatsListe = resultatsListe.Where(t => motsCles.Any(k => t.Probleme.Contains(k))).ToList();
+			
 	    }
+		else
+		{
+			 Console.WriteLine("Pas de mots clés spécifiés");
+		}
 
 	    var resultatsFinaux = from r in resultatsListe
 	                          join p in Produits on r.Produit_id equals p.Id
