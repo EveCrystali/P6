@@ -130,7 +130,7 @@ Statut (résolu/en cours) : Résolu
 
 Problème : Les utilisateurs rencontrent des problèmes de lenteur lors de la génération de rapports financiers mensuels. L'application prend plusieurs minutes pour générer un rapport, ce qui ralentit considérablement le flux de travail.
 
-Résolution  : Après investigation, il s'est avéré que le code responsable de la génération des rapports n'était pas optimisé et effectuait des requêtes redondantes à la base de données. Les développeurs ont remanié l'algorithme pour réduire le nombre de requêtes, mise en cache des données fréquemment utilisées et parallélisation de certains calculs. Dans la nouvelle version, les temps de génération des rapports ont été considérablement réduits, passant de plusieurs minutes à quelques secondes seulement. Des tests de charge ont confirmé les gains de performances. 
+Résolution : Après investigation, il s'est avéré que le code responsable de la génération des rapports n'était pas optimisé et effectuait des requêtes redondantes à la base de données. Les développeurs ont remanié l'algorithme pour réduire le nombre de requêtes, mise en cache des données fréquemment utilisées et parallélisation de certains calculs. Dans la nouvelle version, les temps de génération des rapports ont été considérablement réduits, passant de plusieurs minutes à quelques secondes seulement. Des tests de charge ont confirmé les gains de performances. 
 
 Ticket 10
 
@@ -143,7 +143,7 @@ Statut (résolu/en cours) : Résolu
 
 Problème : Plusieurs utilisateurs ont signalé un bogue où le graphique des performances du portefeuille n'affichait pas les bonnes données pour la période sélectionnée.
 
-Résolution  : Un correctif a été déployé dans la nouvelle version pour corriger le calcul de la plage de dates dans le graphique des performances.
+Résolution : Un correctif a été déployé dans la nouvelle version pour corriger le calcul de la plage de dates dans le graphique des performances.
 
 Ticket 11
 
@@ -156,9 +156,10 @@ Statut (résolu/en cours) : En cours
 
 Problème : Sur les appareils iOS les plus récents, l'application plante lors du démarrage avec une erreur de violation d'accès.
 
-Résolution  : 
+Résolution : 
 
 Ticket 12
+
 Produit : Maître des Investissements
 Version : 2.0
 Système d’exploitation : iOS
@@ -168,7 +169,7 @@ Statut (résolu/en cours) : Résolu
 
 Problème : Sur certains modèles d'iPhone et d'iPad, les titres des graphiques financiers dans l'application ne s'affichent pas correctement. Le titre se trouve soit tronqué, soit chevauche d'autres éléments de l'interface utilisateur. Ce problème semble lié aux différentes tailles et résolutions d'écran des appareils iOS.
 
-Résolution  : Après avoir examiné le code d'affichage des graphiques, les développeurs ont apporté des modifications pour s'assurer que les dispositions s'adaptent dynamiquement aux différentes tailles d'écran. La version 2.1.2 corrige ce bogue et les titres des graphiques s'affichent désormais correctement sur tous les modèles iOS pris en charge, quelle que soit leur résolution. Des tests approfondis sur différents appareils ont validé la correction.
+Résolution : Après avoir examiné le code d'affichage des graphiques, les développeurs ont apporté des modifications pour s'assurer que les dispositions s'adaptent dynamiquement aux différentes tailles d'écran. La version 2.1.2 corrige ce bogue et les titres des graphiques s'affichent désormais correctement sur tous les modèles iOS pris en charge, quelle que soit leur résolution. Des tests approfondis sur différents appareils ont validé la correction.
 
 Ticket 13
 
@@ -334,7 +335,7 @@ Problème : L'application affiche des données pour certains marché incorrectes
 Résolution : 
 
 
-Ticket 24
+Ticket 25
 
 Produit : Trader en Herbe
 Version : 1.3
@@ -348,7 +349,7 @@ Problème : Les utilisateurs signalent des problèmes de performances lorsque l'
 
 Résolution : Le problème a été identifié comme étant une gestion inefficace des ressources système sur les appareils plus anciens. Une mise à jour a été déployée pour optimiser l'utilisation des ressources et améliorer les performances sur les appareils Mac plus anciens. Les utilisateurs ont été informés de la mise à jour et invités à vérifier les améliorations.
 
-Ticket 25
+Ticket 26
 
 Produit : Planificateur d’Anxiété Sociale 
 Version : 1.1

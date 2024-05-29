@@ -23,7 +23,7 @@ void Main()
     DateTime? periodeDebut = null;
     DateTime? periodeFin = null;
     int? productId = null;
-    int? versionId = null;
+    List<int> versionIds = new List<int>();
 	var motsCles = !string.IsNullOrWhiteSpace(motsClesStr) ? motsClesStr.Split(',').Select(k => k.Trim()).ToList() : new List<string>();
 
     if (!string.IsNullOrWhiteSpace(produitNom))
@@ -32,14 +32,14 @@ void Main()
 	    
 	    if (!string.IsNullOrWhiteSpace(versionNom))
 	    {
-	        versionId = GetVersionId(versionNom);
+	        versionIds = GetVersionIds(productId, versionNom);
 	    }
 
 	    periodeDebut = TryParseDate(periodeDebutStr);
         periodeFin = TryParseDate(periodeFinStr);
 		
 		var debugInfo = $"Les résultats pour la recherche de {produitNom} " +
-                    $"{(versionId.HasValue ? $"version: {versionNom}" : "toutes les versions")}, " +
+                    $"{(versionNom.Length > 0 ? $"version: {versionNom}" : "toutes les versions")}, " +
                     $"{(periodeDebut.HasValue ? $"de la date de début: {periodeDebut.Value.ToString("dd/MM/yyyy")}" : "sans date de début")}, " +
                     $"{(periodeFin.HasValue ? $"à la date de fin: {periodeFin.Value.ToString("dd/MM/yyyy")}" : "sans date de fin")}, " +
                     $"{(motsCles.Any() ? $"avec les mots-clés: {string.Join(", ", motsCles)}" : "sans mots-clés")} sont :";
@@ -52,9 +52,14 @@ void Main()
 	    {
 	        resultats = resultats.Where(t => t.Produit_id == productId.Value);
 	    }
-	    if (versionId.HasValue)
+	    if (!string.IsNullOrWhiteSpace(versionNom) && !versionIds.Any())
 	    {
-	        resultats = resultats.Where(t => t.Version_id == versionId.Value);
+	        // Si une version a été spécifiée mais qu'aucune ID de version n'a été trouvée, retourner une séquence vide
+	        resultats = Enumerable.Empty<Ticket>().AsQueryable();
+	    }
+	    else if (versionIds.Any())
+	    {
+	        resultats = resultats.Where(t => versionIds.Contains(t.Version_id));
 	    }
 	    if (periodeDebut.HasValue && periodeFin.HasValue)
 	    {
@@ -118,13 +123,23 @@ int? GetProductId(string produitNom)
     return resultat;
 }
 
-// Méthode pour obtenir l'ID de la version à partir de son nom
-int? GetVersionId(string versionNom)
+// Méthode pour obtenir les IDs de la version à partir du produitId et du nom de version
+List<int> GetVersionIds(int? produitId, string versionNom)
 {
-    var resultat = (from v in Versions
-                    where v.Nom == versionNom
-                    select v.Id).FirstOrDefault();
-    return resultat;
+    if (produitId.HasValue)
+    {
+        var resultats = (from v in Versions
+                         where v.Nom == versionNom && v.Produit_id == produitId
+                         select v.Id).ToList();
+        return resultats;
+    }
+    else
+    {
+        var resultats = (from v in Versions
+                         where v.Nom == versionNom
+                         select v.Id).ToList();
+        return resultats;
+    }
 }
 
 DateTime? TryParseDate(string dateStr)

@@ -1,4 +1,3 @@
-
 -- Insérer les données uniques dans la table Produit
 INSERT INTO Produit (nom)
 SELECT DISTINCT t.Produit
@@ -30,25 +29,14 @@ WHERE NOT EXISTS (
 );
 
 -- Insérer les données uniques dans la table Version
-INSERT INTO Version (nom)
-SELECT DISTINCT t.Version
+INSERT INTO Version (nom, produit_id)
+SELECT DISTINCT t.Version, p.id
 FROM TempTickets t
+JOIN Produit p ON t.Produit = p.nom
 WHERE NOT EXISTS (
     SELECT 1 
     FROM Version v 
-    WHERE v.nom = t.Version
-);
-
--- Insérer les données dans la table Produit_has_Version
-INSERT INTO Produit_has_Version (produit_id, version_id)
-SELECT DISTINCT p.id, v.id
-FROM TempTickets t
-JOIN Produit p ON t.Produit = p.nom
-JOIN Version v ON t.Version = v.nom
-WHERE NOT EXISTS (
-    SELECT 1 
-    FROM Produit_has_Version pv 
-    WHERE pv.produit_id = p.id AND pv.version_id = v.id
+    WHERE v.nom = t.Version AND v.produit_id = p.id
 );
 
 -- Insérer les données dans la table Systeme_exploitation_has_Version
@@ -63,6 +51,7 @@ WHERE NOT EXISTS (
     WHERE sv.version_id = v.id AND sv.systeme_exploitation_id = se.id
 );
 
+-- Insérer les données dans la table Ticket
 INSERT INTO Ticket (date_de_creation, date_de_resolution, produit_id, version_id, systeme_exploitation_id, statut_id, probleme, resolution)
 SELECT 
     TRY_CONVERT(DATETIME, t.DateCreation, 103), -- Convertir la date au format DATETIME
@@ -70,7 +59,7 @@ SELECT
     p.id, v.id, se.id, s.id, t.Probleme, t.Resolution
 FROM TempTickets t
 JOIN Produit p ON t.Produit = p.nom
-JOIN Version v ON t.Version = v.nom
+JOIN Version v ON t.Version = v.nom AND v.produit_id = p.id
 JOIN Systeme_exploitation se ON t.SystemeExploitation = se.nom
 JOIN Statut s ON t.Statut = s.nom;
 
