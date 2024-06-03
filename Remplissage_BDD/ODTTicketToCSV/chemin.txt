@@ -1,0 +1,2 @@
+J:\Open Classrooms\P6\ODTTicketToCSV\input.txt
+J:\Open Classrooms\P6\ODTTicketToCSV\output.csv
