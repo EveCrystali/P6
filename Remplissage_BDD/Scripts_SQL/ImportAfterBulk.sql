@@ -56,8 +56,8 @@ WHERE NOT EXISTS (
 -- Insérer les données dans la table Problèmes
 INSERT INTO Probleme (date_de_creation, date_de_resolution, produit_version_systeme_id, statut_id, probleme, resolution)
 SELECT 
-    TRY_CONVERT(DATETIME, t.DateCreation, 103), -- Convertir la date au format DATETIME
-    TRY_CONVERT(DATETIME, t.DateResolution, 103), -- Convertir la date au format DATETIME
+    TRY_CONVERT(DATETIME, t.DateCreation, 103), 
+    TRY_CONVERT(DATETIME, t.DateResolution, 103),
     pvs.id, s.id, t.Probleme, t.Resolution
 FROM TempTickets t
 JOIN Produit p ON t.Produit = p.nom
